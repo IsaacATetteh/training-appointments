@@ -9,7 +9,7 @@ const ContactDetails = () => {
         <div className="w-3/4 md:w-1/2 align-middle h-48 border-black">
           <p className="mt-6 md:mt-0">
             <span className="text-xs uppercase tracking-wide text-gray-500">
-              Key info{" "}
+              Key info
             </span>
             <a
               href="#"
@@ -21,54 +21,50 @@ const ContactDetails = () => {
           <div className="flex justify-center">
             <ul className="flex flex-col border-0 border-black mt-8 space-y-1 text-sm text-gray-700">
               <div className="flex text-left">
-                {" "}
                 <Image
                   src="/tick.svg"
                   alt="tick"
                   width={16}
                   height={16}
                   className="mr-2"
-                />{" "}
+                />
                 <li>DBS Certified</li>
               </div>
               <div className="flex">
-                {" "}
                 <Image
                   src="/tick.svg"
                   alt="tick"
                   width={16}
                   height={16}
                   className="mr-2"
-                />{" "}
+                />
                 <li>FA/UEFA Qualified</li>
               </div>
               <div className="flex">
-                {" "}
                 <Image
                   src="/tick.svg"
                   alt="tick"
                   width={16}
                   height={16}
                   className="mr-2"
-                />{" "}
+                />
                 <li>First Aid/Emergency Aid Trained</li>
               </div>
               <div className="flex">
-                {" "}
                 <Image
                   src="/tick.svg"
                   alt="tick"
                   width={16}
                   height={16}
                   className="mr-2"
-                />{" "}
+                />
                 <li>Personalised Coaching Sessions</li>
               </div>
             </ul>
           </div>
         </div>
         <div className="w-2/3 md:w-1/2 align-middle h-48 border-black">
-          <p className="mt-6 md:mt-0">
+          <p className="mt-8 md:mt-0">
             <span className="text-xs uppercase tracking-wide text-gray-500">
               Call Me
             </span>
