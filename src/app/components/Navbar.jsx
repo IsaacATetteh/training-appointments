@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link"; // Import Link from next/link
 
 const Navbar = () => {
   const menu = [
@@ -20,19 +21,23 @@ const Navbar = () => {
       path: "/",
     },
   ];
+
   return (
     <nav className="flex items-center justify-between p-4 shadow-lg">
       <div className="flex gap-10 items-center">
         <Image src="/logo.svg" alt="logo" width={180} height={80} />
         <ul className="hidden md:flex gap-7">
-          {menu.map((item, index) => (
-            <li key={index} className="hover:text-primary">
-              {item.name}
+          {menu.map((item) => (
+            <li
+              key={item.id}
+              className="hover:text-blue-500 cursor-pointer hover:scale-105 transition-all ease-in-out"
+            >
+              <Link href={item.path}>{item.name}</Link>
             </li>
           ))}
         </ul>
       </div>
-      <Button className="">Book now</Button>
+      <Button>Book now</Button>
     </nav>
   );
 };
