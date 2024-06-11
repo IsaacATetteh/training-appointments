@@ -12,7 +12,7 @@ const Info = () => {
             <img
               alt=""
               src="/coach.jpg"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="rounded-md absolute inset-0 h-full w-full object-cover"
             />
           </div>
           <div className="lg:py-16">
@@ -26,7 +26,7 @@ const Info = () => {
                 head coaching highly competitive grassroots clubs in London at
                 the U18 & U13 level.
               </p>
-              <h3 className="text-3xl">Session Planning</h3>
+              <h3 className="text-3xl">Session Plan Example</h3>
               <p>
                 Fun and engaging sessions all with a twist. I use warm-ups to
                 set the tone of the session. Alongside this, I typically train

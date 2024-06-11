@@ -14,11 +14,11 @@ const Hero = () => {
             />
           </div>
           <div className="lg:py-24">
-            <h2 className="text-3xl font-bold sm:text-4xl uppercase">
-              Developing your skill set, the tailored way
+            <h2 className="text-3xl lg:text-4xl font-bold sm:text-4xl uppercase">
+              Developing your skill set, the tailored way.
             </h2>
 
-            <div className="flex flex-col md:flex-row md:justify-evenly mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
               <div className="flex">
                 <Image
                   src="/tick.svg"
@@ -37,7 +37,17 @@ const Hero = () => {
                   height={16}
                   className="mr-2"
                 />
-                <p>Two player sessions</p>
+                <p>Small groups</p>
+              </div>
+              <div className="flex w-52 border-0 border-black">
+                <Image
+                  src="/tick.svg"
+                  alt="tick"
+                  width={16}
+                  height={16}
+                  className="mr-2"
+                />
+                <p>Goalkeepers</p>
               </div>
               <div className="flex">
                 <Image
@@ -47,7 +57,28 @@ const Hero = () => {
                   height={16}
                   className="mr-2"
                 />
-                <p>Small groups</p>
+                <p>UEFA Qualified</p>
+              </div>
+              <div className="flex">
+                <Image
+                  src="/tick.svg"
+                  alt="tick"
+                  width={16}
+                  height={16}
+                  className="mr-2"
+                />
+                <p>PVG Certified</p>
+              </div>
+
+              <div className="flex">
+                <Image
+                  src="/tick.svg"
+                  alt="tick"
+                  width={16}
+                  height={16}
+                  className="mr-2"
+                />
+                <p>First Aid Trained</p>
               </div>
             </div>
             <a

@@ -4,6 +4,7 @@ import Hero,  from "./components/Hero";
 import ContactDetails from "./components/ContactDetails";
 import Info from "./components/Info";
 import Map from "./components/Map";
+import Pricing from "./components/Pricing";
 import { useContext } from "react";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <ContactDetails />
       <Info/>
       <Map/>
+      <Pricing/>
     </div>
   );
 }

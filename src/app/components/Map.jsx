@@ -1,6 +1,11 @@
 "use client";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import { UserLocationContext } from "../../../context/UserLocationContext";
 
 const containerStyle = {
@@ -12,54 +17,52 @@ const center = {
   lng: -3.962391835527037,
 };
 
-const one = {
-  lat: 55.95665298520814,
-  lng: -3.1177940448619554,
-};
-const two = {
-  lat: 55.84680856155376,
-  lng: -4.2340592448675345,
-};
-
-const three = {
-  lat: 56.140329460259395,
-  lng: -3.9284515332014083,
-};
-
-const four = {
-  lat: 56.119137471526386,
-  lng: -3.9124087896610975,
-};
-
-const five = {
-  lat: 55.895673380341364,
-  lng: -3.5516283165493534,
-};
-
-const six = {
-  lat: 55.80277664339395,
-  lng: -3.9164336198084864,
-};
-
-const seven = {
-  lat: 55.94529376098116,
-  lng: -4.00248839884399,
-};
-
-const eight = {
-  lat: 55.997646369462224,
-  lng: -3.7639443804850545,
-};
-
-const nine = {
-  lat: 56.39003890464395,
-  lng: -3.4365260555264134,
-};
-
-const ten = {
-  lat: 56.4770085347306,
-  lng: -3.000057578828087,
-};
+const locations = [
+  {
+    position: { lat: 55.95665298520814, lng: -3.1177940448619554 },
+    description: "10 Westbank Street, Edinburgh, EH15 1DR, United Kingdom",
+  },
+  {
+    position: { lat: 55.84680856155376, lng: -4.2340592448675345 },
+    description: "8 King's Drive, Glasgow, G40 1HB, United Kingdom",
+  },
+  {
+    position: { lat: 56.140329460259395, lng: -3.9284515332014083 },
+    description:
+      "Wallace High School, Airthrey Rd., Stirling, Scotland FK9 5JP, United Kingdom",
+  },
+  {
+    position: { lat: 56.119137471526386, lng: -3.9124087896610975 },
+    description: "FK7 7UJ, Stirling, Stirling, Scotland, United Kingdom",
+  },
+  {
+    position: { lat: 55.895673380341364, lng: -3.5516283165493534 },
+    description: "EH54 7EE, Livingston, West Lothian, Scotland, United Kingdom",
+  },
+  {
+    position: { lat: 55.80277664339395, lng: -3.9164336198084864 },
+    description:
+      "ML1 5QN, Motherwell, North Lanarkshire, Scotland, United Kingdom",
+  },
+  {
+    position: { lat: 55.94529376098116, lng: -4.00248839884399 },
+    description:
+      "Dowanfield Road, Cumbernauld, Glasgow, G67 1LA, United Kingdom",
+  },
+  {
+    position: { lat: 55.997646369462224, lng: -3.7639443804850545 },
+    description:
+      "Graeme High School, Callendar Rd, Falkirk, Scotland FK1 1SW, United Kingdom",
+  },
+  {
+    position: { lat: 56.39003890464395, lng: -3.4365260555264134 },
+    description: "PH2 8EB, Perth, Perth and Kinross, Scotland, United Kingdom",
+  },
+  {
+    position: { lat: 56.4770085347306, lng: -3.000057578828087 },
+    description: "DD2 3PT, Dundee, Dundee City, Scotland, United Kingdom",
+  },
+];
 
 const Map = () => {
   const { userLocation } = useContext(UserLocationContext);
@@ -67,6 +70,8 @@ const Map = () => {
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
+
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   if (!isLoaded) {
     return <div>Loading...</div>;
@@ -85,61 +90,28 @@ const Map = () => {
             center={center}
             zoom={8}
           >
-            <Marker position={one} />
-            <Marker position={two} />
-            <Marker position={three} />
-            <Marker position={four} />
-            <Marker position={five} />
-            <Marker position={six} />
-            <Marker position={seven} />
-            <Marker position={eight} />
-            <Marker position={nine} />
-            <Marker position={ten} />
+            {locations.map((location, index) => (
+              <Marker
+                key={index}
+                position={location.position}
+                onClick={() => setSelectedLocation(location)}
+              >
+                {selectedLocation === location && (
+                  <InfoWindow onCloseClick={() => setSelectedLocation(null)}>
+                    <div>{location.description}</div>
+                  </InfoWindow>
+                )}
+              </Marker>
+            ))}
           </GoogleMap>
         </div>
-        <div className="flex flex-col space-y-4  w-full lg:w-1/2">
-          <p>
-            <span className="font-bold">1. </span>Wallace High School, Airthrey
-            Rd., Stirling, Scotland FK9 5JP
-          </p>
-          <p>
-            <span className="font-bold">2. </span>8 King's Drive, Glasgow, G40
-            1HB, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">3. </span>
-            Wallace High School, Airthrey Rd., Stirling, Scotland FK9 5JP,
-            United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">4. </span>FK7 7UJ, Stirling, Stirling,
-            Scotland, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">5. </span> EH54 7EE, Livingston, West
-            Lothian, Scotland, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">6. </span>
-            ML1 5QN, Motherwell, North Lanarkshire, Scotland, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">7. </span>Dowanfield Road, Cumbernauld,
-            Glasgow, G67 1LA, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">8. </span>
-            Graeme High School, Callendar Rd, Falkirk, Scotland FK1 1SW, United
-            Kingdom
-          </p>
-          <p>
-            <span className="font-bold">9. </span>PH2 8EB, Perth, Perth and
-            Kinross, Scotland, United Kingdom
-          </p>
-          <p>
-            <span className="font-bold">10. </span>DD2 3PT, Dundee, Dundee City,
-            Scotland, United Kingdom
-          </p>
+        <div className="flex flex-col space-y-4 w-full lg:w-1/2">
+          {locations.map((location, index) => (
+            <p key={index}>
+              <span className="font-bold">{index + 1}. </span>
+              {location.description}
+            </p>
+          ))}
         </div>
       </div>
     </div>
