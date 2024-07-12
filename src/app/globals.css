@@ -73,4 +73,27 @@
     body {
       @apply bg-background text-foreground;
     }
+    .location-item {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
   }
+
+  /* styles.css */
+.custom-info-window {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 150px; /* Adjust the width as necessary */
+}
+
+.custom-info-window h1 {
+  margin: 0;
+  font-size: 16px; /* Adjust the font size as necessary */
+}
+
+.custom-info-window p {
+  margin: 0;
+  font-size: 12px; /* Adjust the font size as necessary */
+}

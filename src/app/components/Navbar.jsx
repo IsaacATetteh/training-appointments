@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-4 shadow-lg">
       <div className="flex gap-10 items-center">
-        <Image src="/logo.svg" alt="logo" width={180} height={80} />
+        <Image src="/DST2.png" alt="logo" width={180} height={80} />
         <ul className="hidden md:flex gap-7">
           {menu.map((item) => (
             <li
