@@ -8,7 +8,7 @@ const Partnerships = () => {
           <h2 className="text-xl font-bold  sm:text-3xl">Partnerships</h2>
         </header>
 
-        <ul className="mt-8 grid grid-cols-1 gap-28 lg:grid-cols-2 justify-center items-center   ">
+        <ul className="mt-8 grid grid-cols-1 gap-28 lg:grid-cols-2 justify-center items-center">
           <li className="w-72">
             <a href="#" className="group relative block">
               <img
