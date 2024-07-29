@@ -15,10 +15,10 @@ const Pricing = () => {
 
       {/* 1 to 1 Section */}
       <div className="mb-6">
-        <div className="bg-blue-500 text-white text-center py-2 rounded-t-lg">
+        <div className="bg-blue-500 text-white text-center py-2 rounded-lg">
           <h2 className="text-xl font-bold">1 TO 1</h2>
         </div>
-        <div className="border-t-4 border-blue-500">
+        <div className=" border-blue-500">
           <div className="flex justify-between items-center py-3 px-4 border-b">
             <span className="font-semibold">1 hour</span>
             <span className="font-bold">£25</span>
@@ -32,10 +32,10 @@ const Pricing = () => {
 
       {/* 2 to 1 Section */}
       <div className="mb-6">
-        <div className="bg-blue-500 text-white text-center py-2 rounded-t-lg">
+        <div className="bg-blue-500 text-white text-center py-2 rounded-lg">
           <h2 className="text-xl font-bold">2 TO 1</h2>
         </div>
-        <div className="border-t-4 border-blue-500">
+        <div className=" border-blue-500">
           <div className="flex justify-between items-center py-3 px-4 border-b">
             <span className="font-semibold">1 hour</span>
             <span className="font-bold">£15 EACH</span>
@@ -49,10 +49,10 @@ const Pricing = () => {
 
       {/* Savings Bundles Section */}
       <div className="mb-6">
-        <div className="bg-green-500 text-white text-center py-2 rounded-t-lg">
+        <div className="bg-green-500 text-white text-center py-2 rounded-lg">
           <h2 className="text-xl font-bold">SAVINGS BUNDLES</h2>
         </div>
-        <div className="border-t-4 border-green-500">
+        <div className=" border-green-500">
           <div className="flex justify-between items-center py-3 px-4 border-b">
             <span className="font-semibold">4 x 1 hour (1 to 1)</span>
             <div>

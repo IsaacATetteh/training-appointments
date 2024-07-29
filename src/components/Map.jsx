@@ -8,9 +8,10 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import { UserLocationContext } from "../../context/UserLocationContext";
+import { TableDemo } from "./TableDemo";
 
 const containerStyle = {
-  height: "600px",
+  height: "100%",
 };
 
 const center = {
@@ -69,8 +70,8 @@ const Map = () => {
 
   return (
     <section className="bg-[#09090B] text-white">
-      <div className="items-center md:grid md:grid-cols-2 md:grid-rows-2 mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-0 border-green-400 ">
-        <div className="col-span-2 h-[600px] border-2">
+      <div className=" md:grid md:grid-cols-2 md:grid-rows-2 mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-0 border-green-400 ">
+        <div className="col-span-2 h-[400px] md:h-[500px] w-[500px] border-2 border-white">
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
@@ -95,12 +96,12 @@ const Map = () => {
             ))}
           </GoogleMap>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <Pricing />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <Pricing />
-        </div>
+        </div>{" "}
       </div>
     </section>
   );

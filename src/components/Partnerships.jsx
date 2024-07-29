@@ -9,27 +9,25 @@ const Partnerships = () => {
             Partnerships
           </h2>
         </header>
-
-        <ul className="mt-8 grid grid-cols-2 justify-center items-center">
-          <li className="w-40 md:w-72">
-            <a href="#" className="group relative block">
+        <ul className=" grid grid-cols-2 justify-center items-center">
+          <li className="w-40 md:w-64">
+            <a className="group relative block">
               <img
                 src="/VX3.png"
                 alt=""
-                className="aspect-square w-40 md:w-72 object-contain transition duration-500 group-hover:opacity-90"
+                className="aspect-square w-40 md:w-64 object-contain transition duration-500 group-hover:opacity-90"
               />
 
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6"></div>
             </a>
           </li>
-          <li className="w-40 md:w-72">
-            <a href="#" className="group relative block">
+          <li className="w-40 md:w-64">
+            <a className="group relative block">
               <img
                 src="/GRIPWORX.png"
                 alt=""
-                className="aspect-square w-40 md:w-72 object-contain transition duration-500 group-hover:opacity-90"
+                className="aspect-square w-40 md:w-64 object-contain transition duration-500 group-hover:opacity-90"
               />
-
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6"></div>
             </a>
           </li>
