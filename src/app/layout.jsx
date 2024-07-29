@@ -1,7 +1,7 @@
 "use client";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import { UserLocationContext } from "/context/UserLocationContext";
 import Provider from "./Provider";
@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
           <UserLocationContext.Provider
             value={{ userLocation, setUserLocation }}
           >
-            <Navbar />
             {children}
           </UserLocationContext.Provider>
         </Provider>
