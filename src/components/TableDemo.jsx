@@ -32,67 +32,31 @@ const locations = [
   },
 ];
 
-const invoices = [
-  {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
-  },
-];
-
 export function TableDemo() {
   return (
-    <Table>
-      <TableCaption>Click to go to location</TableCaption>
-      <TableHeader>
-        <TableHead className="w-[100px] text-xl">Training Locations</TableHead>
-      </TableHeader>
-      <TableBody>
-        {locations.map((location) => (
-          <TableRow key={location.description}>
-            <TableCell className="font-medium">
-              {location.description}
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <div className="flex flex-col  h-full w-full text-center justify-center mt-10 md:mt-0">
+      <h1 className=" font-bold md:text-3xl text-2xl text-center uppercase">
+        Training Locations
+      </h1>{" "}
+      <div className="bg-[#004AAD] text-white text-center py-2 rounded-lg mt-8">
+        <h2 className="text-xl font-bold uppercase">Stirling</h2>
+      </div>
+      <div className="flex flex-col py-2 location-item md:text-lg gap-2">
+        <p className="">Wallace High School</p>
+        <p>Forthbank Performance Center</p>
+      </div>
+      <div className="bg-[#004AAD] text-white text-center py-2 rounded-lg mt-8">
+        <h2 className="text-xl font-bold uppercase">Edinburgh</h2>
+      </div>
+      <div className="py-2 location-item md:text-lg">
+        <p>St Augustines 3G Pitch</p>
+      </div>
+      <div className="bg-[#004AAD] text-white text-center py-2 rounded-lg mt-8">
+        <h2 className="text-xl font-bold uppercase">Cumbernauld</h2>
+      </div>
+      <div className="py-2 location-item md:text-lg">
+        <p>Ravenswood Playing Fields</p>
+      </div>
+    </div>
   );
 }

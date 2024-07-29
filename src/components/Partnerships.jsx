@@ -2,7 +2,7 @@ import React from "react";
 
 const Partnerships = () => {
   return (
-    <section>
+    <section className="border-t-2">
       <div className="flex  flex-col   items-center mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">
         <header className="text-center">
           <h2 className="text-xl font-bold sm:text-3xl md:text-4xl">
@@ -32,6 +32,9 @@ const Partnerships = () => {
             </a>
           </li>
         </ul>
+        <p className="text-xs text-gray-500">
+          &copy; 2022. Company Name. All rights reserved.
+        </p>
       </div>
     </section>
   );

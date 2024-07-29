@@ -9,6 +9,8 @@ import {
 } from "@react-google-maps/api";
 import { UserLocationContext } from "../../context/UserLocationContext";
 import { TableDemo } from "./TableDemo";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const containerStyle = {
   height: "100%",
@@ -64,14 +66,32 @@ const Map = () => {
     setSelectedLocation(location);
   };
 
+  const { ref: sectionRef, inView: isSectionVisible } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
 
   return (
-    <section className="bg-[#09090B] text-white">
-      <div className=" md:grid md:grid-cols-2 md:grid-rows-2 mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-0 border-green-400 ">
-        <div className="col-span-2 h-[400px] md:h-[500px] w-[500px] border-2 border-white">
+    <section ref={sectionRef} className="">
+      <motion.div
+        className="md:grid md:grid-cols-2 gap-8 mx-auto max-w-screen-xl px-4 py-4 sm:px-6 sm:py-12 lg:px-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{
+          opacity: isSectionVisible ? 1 : 0,
+          y: isSectionVisible ? 0 : 50,
+        }}
+        transition={{ duration: 1.5 }}
+      >
+        <motion.div
+          className="col-span-1 h-[400px] md:h-[500px] w-full mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isSectionVisible ? 1 : 0 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        >
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
@@ -95,14 +115,26 @@ const Map = () => {
               </Marker>
             ))}
           </GoogleMap>
-        </div>
-        <div className="flex justify-center mt-10">
+        </motion.div>
+        <motion.div
+          className="flex justify-center items-center h-[500px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isSectionVisible ? 1 : 0 }}
+          transition={{ duration: 1.5, delay: 1 }}
+        >
+          <div className="w-[90%] h-full">
+            <TableDemo />
+          </div>
+        </motion.div>
+        <motion.div
+          className="col-span-2 flex justify-center mt-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isSectionVisible ? 1 : 0 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
+        >
           <Pricing />
-        </div>
-        <div className="flex justify-center mt-10">
-          <Pricing />
-        </div>{" "}
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
